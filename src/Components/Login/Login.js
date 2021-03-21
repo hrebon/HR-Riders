@@ -6,11 +6,11 @@ import { userContext, UserContext } from "../../App";
 import { useHistory, useLocation } from "react-router";
 import { Link } from "react-router-dom";
 import "./Login.css";
-import { useForm } from 'react-hook-form'
+import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
 import { GrFacebook } from "react-icons/gr";
 
-if(firebase.apps.length == 0){
+if (firebase.apps.length == 0) {
   firebase.initializeApp(firebaseConfig);
 }
 function Login() {
@@ -77,13 +77,13 @@ function Login() {
       .catch((error) => {
         var errorCode = error.code;
         var errorMessage = error.message;
-        
+
         var email = error.email;
       });
   };
 
   const handleSubmit = (e) => {
-    console.log(user.email, user.password,user.name);
+    console.log(user.email, user.password, user.name);
     if (newUser && user.email && user.password) {
       firebase
         .auth()
@@ -93,7 +93,7 @@ function Login() {
           const newUserInfo = { ...user };
           newUserInfo.error = "";
           newUserInfo.success = true;
-          
+
           setUser(newUserInfo);
           displayUserName(user.name);
           console.log(newUserInfo);
@@ -118,8 +118,8 @@ function Login() {
         .signInWithEmailAndPassword(user.email, user.password)
         .then((userCredential) => {
           // Signed in
-          
-          const newUserInfo = { ...user};
+
+          const newUserInfo = { ...user };
           newUserInfo.error = "";
           newUserInfo.success = true;
           setLoggedInUser(newUserInfo);
@@ -139,8 +139,6 @@ function Login() {
     e.preventDefault();
   };
 
-  
-
   const handleChange = (e) => {
     let isFormValid = true;
     if (e.target.name === "email") {
@@ -151,11 +149,10 @@ function Login() {
       const passwordHasNumber = /\d{1}/.test(e.target.value);
       isFormValid = isPasswordValid && passwordHasNumber;
     }
-    if(e.target.name === "confirmpassword"){
+    if (e.target.name === "confirmpassword") {
       const isPasswordValid = e.target.value > 6;
       const passwordHasNumber = /\d{1}/.test(e.target.value);
       isFormValid = isPasswordValid && passwordHasNumber;
-      
     }
 
     if (isFormValid) {
@@ -163,18 +160,18 @@ function Login() {
       newUserInfo[e.target.name] = e.target.value;
       setUser(newUserInfo);
     }
-  }
+  };
 
   const [password, setPassword] = useState();
   const [confirmPassword, setConfirmPassword] = useState();
-  const [error, setError] = useState()
+  const [error, setError] = useState();
 
   const displayUserName = (name) => {
     var user = firebase.auth().currentUser;
 
     user
       .updateProfile({
-        displayName: name
+        displayName: name,
       })
       .then(function () {
         // Update successful.
@@ -183,19 +180,16 @@ function Login() {
         // An error happened.
       });
   };
-  const checkPassword =(e) => {
+  const checkPassword = (e) => {
     const pass = e.target.value;
-      setConfirmPassword(pass);
-      if(password != pass ){
-          setError('password not match');
-      }
-      else
-        setError('');
-  }
+    setConfirmPassword(pass);
+    if (password != pass) {
+      setError("password not match");
+    } else setError("");
+  };
 
   return (
     <div>
-
       <div className="login">
         <form onSubmit={handleSubmit}>
           {newUser && <h4>Create an account</h4>}
@@ -233,13 +227,13 @@ function Login() {
               type="password"
               name="confirmpassword"
               onBlur={handleChange}
-              onChange={(e)=>checkPassword(e)}
+              onChange={(e) => checkPassword(e)}
               id=""
               placeholder="Confirm password"
               required
             />
           )}
-          <p >{error}</p>
+          <p>{error}</p>
           <br />
           <br />
           <input
@@ -263,12 +257,15 @@ function Login() {
         )}
       </div>
       <div className="signIn">
-        <h5 style={{ color: "white"}}>Or</h5>
-        <button onClick={handleGoogleSingIn}><FcGoogle/>Continue with Google</button>
-        
-        <br />
-        <button Continue onClick={handleFacebookSingIn}><GrFacebook/>
+        <h5 style={{ color: "white" }}>Or</h5>
+        <button Continue onClick={handleFacebookSingIn}>
+          <GrFacebook />
           Continue with Facebook
+        </button>
+        <br />
+        <button onClick={handleGoogleSingIn}>
+          <FcGoogle />
+          Continue with Google
         </button>
       </div>
     </div>
