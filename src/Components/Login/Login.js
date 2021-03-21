@@ -47,6 +47,7 @@ function Login() {
         };
         setUser(signInUser);
         setLoggedInUser(signInUser);
+        history.replace(from);
       })
 
       .catch((error) => {
@@ -71,6 +72,7 @@ function Login() {
         };
         setUser(signInUser);
         setLoggedInUser(signInUser);
+        history.replace(from);
       })
       .catch((error) => {
         var errorCode = error.code;
@@ -262,11 +264,12 @@ function Login() {
       </div>
       <div className="signIn">
         <h5 style={{ color: "white"}}>Or</h5>
-        <button Continue onClick={handleGoogleSingIn}><GrFacebook/>
+        <button onClick={handleGoogleSingIn}><FcGoogle/>Continue with Google</button>
+        
+        <br />
+        <button Continue onClick={handleFacebookSingIn}><GrFacebook/>
           Continue with Facebook
         </button>
-        <br />
-        <button onClick={handleFacebookSingIn}><FcGoogle/>Continue with Google</button>
       </div>
     </div>
   );
