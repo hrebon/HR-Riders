@@ -10,8 +10,9 @@ import { useForm } from 'react-hook-form'
 import { FcGoogle } from "react-icons/fc";
 import { GrFacebook } from "react-icons/gr";
 
-firebase.initializeApp(firebaseConfig);
-
+if(firebase.apps.length == 0){
+  firebase.initializeApp(firebaseConfig);
+}
 function Login() {
   const [newUser, setNewUser] = useState(false);
   const [user, setUser] = useState({
@@ -122,7 +123,6 @@ function Login() {
           setLoggedInUser(newUserInfo);
           history.replace(from);
           setUser(newUserInfo);
-          console.log(newUserInfo)
         })
         .catch((error) => {
           const newUserInfo = { ...user };

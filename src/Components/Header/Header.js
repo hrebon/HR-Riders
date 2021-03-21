@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import { Button, Nav, Navbar } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import { userContext } from "../../App";
-import  { Breakpoint, BreakpointProvider } from 'react-socks';
+import  { Breakpoint } from 'react-socks';
 
 
 import './Header.css';
