@@ -1,0 +1,32 @@
+.login{
+    text-align: center;
+    border: 1px solid black;
+    width: 50%;
+    margin-left: 300px;
+    box-shadow: 5px  5px 5px  gray;
+    background-color: pink;
+    margin-top: 10px;
+
+}
+input[type=text], [type=password] {
+    border: none;
+    border-bottom: 1px solid black;
+    margin: 10px;
+    
+  }
+  input[type=submit]{
+      background-color: lightcoral;
+      color: white;
+      border-radius: 5px;
+  }
+  .signIn{
+      margin-top: 10px;
+      text-align: center;
+      
+  }
+  .signIn button{
+      width:30%;
+      border-radius: 10px;
+      background-color:white;
+      margin: 5px;
+  }

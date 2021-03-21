@@ -1,0 +1,18 @@
+.header{
+    display: flex;
+    margin-left: 100px;
+    margin-top: 10px;
+    background-color: lightgray;
+    margin-right: 100px;
+}
+.navbar{
+    margin-left: 600px;
+}
+.navbar nav a{
+    text-decoration: none;
+    margin-left: 10px;
+    color: black;
+}
+nav button{
+    margin-left:10px;
+}

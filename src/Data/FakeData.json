@@ -1,0 +1,15 @@
+[
+    {
+        "vehicle": "Bike",
+        "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAkK53xhuLTs___oWUQ6mQG6Cu1s9xUBQ9LA&usqp=CAU" 
+    },{
+        "vehicle": "Car",
+        "image" : "https://image.shutterstock.com/image-vector/red-cabriolet-cartoon-vector-illustration-260nw-1662195496.jpg"
+    },{
+        "vehicle" : "Bus",
+        "image" : "https://w7.pngwing.com/pngs/664/672/png-transparent-bus-cartoon-cartoon-bus-cartoon-character-car-school-bus.png"
+    },{
+        "vehicle" : "Train",
+        "image" : "https://image.shutterstock.com/image-vector/train-260nw-104147417.jpg"
+    }
+]

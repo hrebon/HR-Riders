@@ -1,0 +1,41 @@
+.box{
+    border: 5px solid lightgray;;
+    border-radius: 5px;
+    width: 30%;
+    background-color: lightgray;
+    margin-top: 10px;
+}
+.sm-box{
+    background-color: red;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+.sm-box-1{
+    border: 1px solid gray;
+    box-shadow: 5px 5px 4px gray;
+    background-color:white;
+    border-radius: 5px;
+    display: flex;
+    text-align: center;
+    margin: 10px;
+}
+.sm-box-2{
+    border: 1px solid gray;
+    box-shadow: 5px 5px 4px gray;
+    background-color:white;
+    border-radius: 5px;
+    display: flex;
+    text-align: center;
+    margin: 10px;
+}
+.sm-box-3{
+    border: 1px solid gray;
+    box-shadow: 5px 5px 4px gray;
+    background-color:white;
+    border-radius: 5px;
+    display: flex;
+    text-align: center;
+    margin: 10px;
+}
+
